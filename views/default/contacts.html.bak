@@ -1,0 +1,31 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+    &nbsp;
+<hr>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Contacts Us</h1>
+<div class="hehe">
+<table style="font-size:20px" class="table">
+    <tr class="first">
+            <td>Name</td>
+            <td>Designation</td>
+        <td> E-Mail </td>
+           <!--  <td>Created By</td>
+            <td>Created On</td> -->
+    </tr>
+    {{for book in select:}}
+    <tr>
+    <td>{{=book.nmes}}</td>
+            <td>{{=book.designation}}</td>
+			<td> {{=book.email}}<td>
+        </tr>
+    {{pass}}
+</table>
+</div>

@@ -1,0 +1,25 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">My Profile</h1>
+<div class="hehe">
+    <h2>
+        Name- {{=auth.user.first_name}} {{=auth.user.last_name}}
+    </h2>
+    <h2>
+        E-Mail- {{=auth.user.email}}
+    </h2>
+    <h2>
+        Roll No.- {{=auth.user.roll_no}}
+    </h2>
+    <h2>
+        Gender- {{=auth.user.Gender}}
+    </h2>
+    <h2>
+        Hometown- {{=auth.user.Hometown}}
+    </h2>
+</div>

@@ -1,0 +1,19 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<div style="width:600px;" class="hehe">
+    <h2 style="text-align:center">
+        Name of Book- {{=show.title}}
+    </h2>
+    <p style="text-align:center"><img height="260px" width="200px" src="http://127.0.0.1:8000/Newrs/appadmin/download/db/{{=show.book_image}}"/></p>
+    <h3 style="text-align:center">
+        Classification- {{=show.classi}}
+    </h3>
+    <h4 style="text-align:center">
+        Description- {{=show.Descrip}}
+    </h4>
+</div>

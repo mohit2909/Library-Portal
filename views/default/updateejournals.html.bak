@@ -1,0 +1,14 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+    &nbsp;
+<hr>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Update E-Journals</h1>
+{{=form}}

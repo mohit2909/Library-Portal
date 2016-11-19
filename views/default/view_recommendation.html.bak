@@ -1,0 +1,33 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h5>
+    &nbsp;
+</h5>
+<hr>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">View Recommendations</h1>
+<div class="hehe">
+<table style="font-size:20px" class="table">
+    <tr class="first">
+            <td>Book Name</td>
+            <td>Author</td>
+            <td>Publisher</td>
+            <td>Recommended By</td>
+    </tr>
+    {{for book in s:}}
+        <tr class="sec">
+            <td>{{=book.Title}}</td>
+            <td>{{=book.Author}}</td>
+            <td>{{=book.Publisher}}</td>
+            <td>{{=book.created_by.first_name}}</td>
+        </tr>
+    {{pass}}
+</table>
+</div>

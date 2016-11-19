@@ -1,0 +1,136 @@
+{{extend 'layout.html'}}
+
+	<div id="site_content">	
+
+	  <div class="sidebar_container">       
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <li id="sg_jquery_scroller_widget-2" class="sg_jquery_scroller_widget_plugin_class widget fix"><div class="widget-pad"><h3 class="widget-title">Recent Updates</h3><style type="text/css">
+   	/* CSS for the scrollers */
+	.vertical_scroller25 {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        float: left;
+        width: 100%;  /* 100%; */
+        height: 100px; /* 200px; */
+        padding: 2px 2px 2px 2px;
+        margin-bottom: 10px;
+	}
+	.scrollingtext {
+		position:absolute;
+		white-space: normal;
+		/*font-family:'Trebuchet MS',Arial;*/
+        text-align: left;
+	}
+
+    .scrollingtext ul li {
+        padding-bottom: 10px;
+    }
+
+</style>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        //create a vertical scroller...
+        $('.vertical_scroller25').SetScroller({
+                velocity: 50, /*50,*/
+                direction: 'vertical',  /*'vertical' */
+                startfrom: 'bottom'
+        });
+    });
+</script>
+<div class="gridContainer clearfix">
+    <div class="vertical_scroller25">
+        <div class="scrollingtext">
+            <ul>
+                                <li>
+                                            <p class="sgjvs_widget_title">
+                            <a href="#/">News 1</a>
+                        </p>
+                                                                            </li>
+                                <li>
+                                            <p class="sgjvs_widget_title">
+                            <a href="#/">News 2</a>
+                        </p>
+                                                                            </li>
+                                <li>
+                                            <p class="sgjvs_widget_title">
+                            <a href="#">News 3</a>
+                        </p>
+                                                                            </li>
+                                <li>
+                                            <p class="sgjvs_widget_title">
+                            <a href="#">News 4</a>
+                        </p>
+                                                                            </li>
+                                            </ul>
+        </div> <!-- end of scrolling text -->
+    </div>  <!-- end of Vertical Scroller -->
+
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Latest Update</h2>
+            <h3>November 2015</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>October 2015</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->  
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>September 2015</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->  		
+        <div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Contact</h2>
+            <p>Phone: +91 (0)1234 567891</p>
+            <p>Email: <a href="mailto:info@youremail.co.in">info@youremail.co.in</a></p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+      </div><!--close sidebar_container-->	
+          </div>
+        </div>
+	  <div id="banner_image">
+	    <div id="slider-wrapper">        
+          <div id="slider" class="nivoSlider">
+            <img class="yolo" src="{{=URL('static','images/1.jpg')}}" alt="" />
+            <img class="yolo" src="{{=URL('static','images/2.jpg')}}" alt="" />
+			<img class="yolo" src="{{=URL('static','images/3.jpg')}}" alt="" />
+			<img class="yolo" src="{{=URL('static','images/4.jpg')}}" alt="" />
+			<img class="yolo" src="{{=URL('static','images/5.jpg')}}" alt="" />
+			<img class="yolo" src="{{=URL('static','images/6.jpg')}}" alt="" />
+			<img class="yolo" src="{{=URL('static','images/7.jpg')}}" alt="" />
+		  </div><!--close slider-->
+		</div><!--close slider_wrapper-->
+	  </div><!--close banner_image-->
+	  <div id="content">
+        <div class="content_item">
+		  <h1>About Library</h1> 
+	      <p>The IIIT Hyderabad Library is the heart of the Academic and Research Programmes of the Institute. All students, faculty members and employees of the Institute are entitled to make use of the Library facilities on taking the library membership. The Library is having a rich collection of books, Reference Books , Theses and Dissertations and Back volumes of periodicals. The Library subscribes to various National / International Print Journals and popular magazines, and also subscribing e-Journals.</p>
+            <h1>
+                &nbsp;
+            </h1>
+            &nbsp;
+		  <div class="content_container">
+		    <p style="text-align:center">To see through the working hours of IIIT-H Library , click on the Schedule.</p>
+		  	<div class="button_small">
+                <p style="text-align:center"><a href="{{=URL('default','hours')}}">Schedule</a></p>
+		    </div><!--close button_small-->
+		  </div><!--close content_container-->
+          <div class="content_container">
+		    <p style="text-align:center">Give some feedback to help improve the library or post complaints</p>          
+		  	<div class="button_small">
+                <p style="text-align:center"><a style="text-align:center" href="{{=URL('default','feedback')}}">Feedback</p></a>
+		    </div><!--close button_small-->		  
+		  </div><!--close content_container-->			  
+		</div><!--close content_item-->
+      </div><!--close content-->
+          </div>

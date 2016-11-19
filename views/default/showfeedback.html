@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+<div  margin-top="100px" class="hehe">
+    <h2 > FEEDBACK </h2>
+    <div> Subject: &nbsp;&nbsp;{{=rs.Subject}} </div>
+    <div> Desciption: &nbsp;&nbsp; {{=rs.Description}} </div>
+    <div> Given BY: &nbsp;&nbsp;{{=rs.created_by.first_name}} </div>
+</div>

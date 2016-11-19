@@ -1,0 +1,126 @@
+{{extend 'layout.html'}}
+<style type="text/css">
+   /* Make room for the mini-form */
+   html body { margin-top: 60px; }
+   
+   /* Reset all styles */
+   #include * {
+      text-align: left;
+      border: 0; padding: 0; margin: 0;
+      font: 12px Verdana,Arial,Tahoma;
+      color: #eee;
+      font-weight: normal;
+      background: transparent;
+      text-decoration: none;
+      display: inline;
+   }
+   #include p {
+      margin: 4px 0 0 10px;
+      display: block;
+   }
+   #include b {
+      font-weight: bold;
+   }
+   #include script {
+      display:none;
+   }
+   
+   /* Style the mini-form div */
+   #include {
+      border-top: 3px solid #ce6c1c;
+      border-bottom: 3px solid #ce6c1c;
+      background: #0b1933;
+      position: absolute;
+      top:0; left:0;
+      width: 100%;
+      height: 50px;
+      z-index: 100000;
+   }
+   
+   /* Mini-form elements */
+   #include a {
+      color: #ce6c1c;
+   }
+   #include a:hover {
+      color: #ccc;
+   }
+   #include .url-input {
+      padding: 2px;
+      background: #eee;
+      color: #111;
+      border: 1px solid #ccc;
+   }
+   #include .url-input:focus {
+      background: #fff;
+      border: 1px solid #ce6c1c;
+   }
+   #include .url-button {
+      font-weight: bold;
+      border-style: outset;
+      font-size: 11px;
+      line-height: 10px;
+   }
+</style>
+
+
+
+
+<div id="container">
+  <div id="banner">
+    
+  </div>
+  
+  <div id="content">
+   <h2>Frequently Asked Questions</h2>
+   <ul>
+   <li><a href="">What is the due date for issued books?</a></li>
+   <li><a href="">Can I renew the book?</a></li>
+   <li><a href="">How Can I recommend a book?</a></li>
+   <li><a href="">I have lost the book, what I have to do?</a></li>
+   <li><a href="">Whether the library has subscribed any e-journals ?</a></li>
+   <li><a href="">I want to know the number of books I have checked out?</a></li>
+   <li><a href="">Can I reserve the book through WebOPAC?</a></li>
+   <li><a href="">Where I can find notices and announcements?</a></li>
+   <li><a href="">Does the library conduct any book exhibitions in the institute?</a></li>
+   <li><a href="">Can I bring my personal books/materials to library?</a></li>
+   <li><a href="">Can I get CDs accompanied with the books or magazines?</a></li>
+   <li><a href="">Whether I have to bring My Identity Card to Library?</a></li>
+   <li><a href="">My ID-Card is missing what do I do?</a></li>
+    <li><a href="">How can I recommend subscription to a new journal/magazine in the library?</a></li>
+   <li><a href="">Shall I authorize to get Thesis and project reports from the library?</a></li>
+   <li><a href="">Shall I use the computers in the library for check my personnel mails?</a></li></ul>
+<dl>
+<dt><b><a name="1" class="faq">What is the due date for issued books?</a></b></dt>
+<dd>A: 14 days.</dd>
+<dt><b><a name="2" class="faq">Can I renew the book?</a></b></dt>
+<dd> A: Yes.If the book is on demand by anybody, it cannot be renewed.</dd> 
+<dt><b><a name="3" class="faq">How Can I recommend a book?</a></b></dt>
+<dd>A: An authorized user can recommend a book for purchase. In this regard, fill and submit an online form  available in library website <a href="/browse.php?u=RvM5VRZMs62bt9KkyUgfih%2FGzA%2BEcSi40XzNfgeQ3nUtDjGFut0K&amp;b=29">here </a>.</dd>
+<dt><b><a name="4" class="faq">I have lost the book, what I have to do?</a></b></dt>
+<dd>A: You should replace the book along with fine as per the library rules.  If the title is not available you should pay 3 times of the book cost, and in case of the book is out of  print you have to pay 4 times of the book cost.  For this purpose, you need to request the Chair, Library Committee with sufficient reasons for loss of book and submit the application in the library.</dd>
+<dt><b><a name="5" class="faq">Whether the library has subscribed any e-journals ?</a></b></dt>
+<dd>A: Yes, Library has subscribed e-journals such as IEL, Science Direct,  ACM, Springer, and ASCE. You can browse through the library website <a href="/browse.php?u=RvM5VRZMs62bt9KkyUgfih%2FGzA%2BEcS%2F61HjKaRiE13V3FWuAog%3D%3D&amp;b=29">Here</a></dd>
+<dt><b><a name="6" class="faq">I want to know the number of books I have checked out?</a></b></dt>
+<dd>A: Visit webopac, click on check out.  Enter your roll number i.e., If your Roll No. 200901001 so you have to enter 00901001 only to find list of books checked out.</dd>
+<dt><b><a name="7" class="faq">Can I reserve the book through WebOPAC?</a></b></dt>
+<dd>A: Yes, when the book is checked out by any other user, your reserve will be accepted. </dd>
+<dt><b><a name="8" class="faq">Where I can find notices and announcements?</a></b></dt>
+<dd>A: In the Library website <a href="/browse.php?u=RvM5VRZMs62bt9KkyUgfih%2FGzA%2BEcSu50HjKdRWA1mM3CWzDpsQLww%3D%3D&amp;b=29"> here</a></dd>
+<dt><b><a name="9" class="faq">Does the library conduct any book exhibitions in the institute?</a></b></dt>
+<dd>A: Yes, book exhibitions are conducted in institute, you can find your required books through the exhibitions.</dd>
+<dt><b><a name="10" class="faq">Can I bring my personal books/materials to library?</a></b>
+</dt><dd>A: Users are not allowed to bring their personal books or other reading materials to the library. They, however, can bring their personal materials to Library Reading  Room (i.e., in front of  the library).</dd>
+<dt><b><a name="11" class="faq">Can I get CDs accompanied with the books or magazines?</a></b></dt>
+<dd>A: Yes, submit your Identity Card and Collect the CD from the Library.</dd>
+<dt><b><a name="12" class="faq">Whether I have to bring My Identity Card to Library?</a></b></dt>
+<dd>A: Yes, you have to show your identity to the security personal in the library and also while issuing the books.</dd>
+<dt><b><a name="13" class="faq">My ID-Card is missing what do I do?</a></b></dt>
+<dd>A: Report to Library staff and block your account so there may be no mis-use of your card.</dd>
+<dt><b><a name="14" class="faq">How can I recommend subscription to a new journal/magazine in the library?</a></b></dt>
+<dd>A: An authorized user can send the request for subscription to the new journal/magazine to the Chair, Library. </dd>
+<dt><b><a name="15" class="faq">Shall I authorize to get Thesis and project reports from the library?</a></b></dt>
+<dd>A: No, refer thesis and projects in the library only. However, you can take photocopy.</dd>
+<dt><b><a name="16" class="faq">Shall I use the computers in the library for check my personnel mails?</a></b></dt>
+<dd>A: No, the computers are available for accesses e-journals and e-materials</dd>
+</dl>
+</div>

@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <title>IIIT-H Library</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="{{=URL('static','css/style2.css')}}" />
+  <script type="text/javascript" src="{{=URL('static','js/jquery.min.js')}}"></script>
+  <script type="text/javascript" src="{{=URL('static','js/jquery.easing.min.js')}}"></script>
+  <script type="text/javascript" src="{{=URL('static','js/jquery.nivo.slider.pack.js')}}"></script>
+  <script type="text/javascript" src="{{=URL('static','js/jquery-scroller-v1.min.js')}}"></script>  
+  <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+  </script>
+    <link rel="stylesheet" href="{{=URL('static','css/bootstrap1.min.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/bootstrap-responsive.min.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/web2py_bootstrap.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/web2py.css')}}"/>
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.png')}}">
+    <script src="{{=URL('static','js/modernizr-2.8.3.min.js')}}"></script>
+</head>
+
+<body>
+    <div class="w2p_flash alert alert-dismissable">{{=response.flash or ''}}</div>
+	<div id="menubar">
+	<div id="main">
+	<a href="http://iiit.ac.in" id="logo"><img style="height=:100px;width:220px" src="{{=URL('static','images/logo.png')}}"></a>
+    <hr>
+	  <div id="welcome">
+	    <h1><a href="#">IIIT-H Library</a></h1>
+	  </div><!--close welcome-->
+      <div id="menu_items">
+          <ul id="nav"><li><a href="/Newrs/default/index">Home</a></li><li><a class="hsubs" href="#">Resourses</a><ul class="subs"><li><a href="/Newrs/default/showbooks">Books</a></li><li><a href="/Newrs/default/showjournals">Journals</a></li><li><a href="/Newrs/default/showthesis">Thesis</a></li><li><a href="/Newrs/default/showejournals">E-Journals</a></li><li><a href="/Newrs/default/showebooks">E-Books</a></li></ul></li>
+              {{if not auth.has_membership('managers'):}}<li><a class="hsubs" href="#">Other</a><ul class="subs"><li><a href="/Newrs/default/shownews">Show News</a></li><li><a href="/Newrs/default/askyourqueries">Ask Your Query</a></li><li><a href="/Newrs/default/showthesis">Recent Additions</a></li><li><a href="/Newrs/default/recommend">Recommend Book</a></li></ul></li>
+              {{else:}}
+              <li><a href="/Newrs/default/admin">Admin</a></li>
+              {{pass}}
+              <li><a class="hsubs" href="#">About</a><ul class="subs"><li><a href="/Newrs/default/rules">Rules</a></li><li><a href="/Newrs/default/hours">Working Hours</a></li><li><a href="/Newrs/default/faq">FAQ</a></li><li><a href="/Newrs/default/contacts">Contact Us</a></li><li><a href="/Newrs/default/feed">Feedback</a></li></ul></li>
+{{if not auth.user:}}
+    <li class="right"><a class="hsubs" href="#">Library</a><ul class="subs"><li><a href="/Newrs/default/user/register?_next=/Newrs/default/index" rel="nofollow">Sign Up</a></li><li class="divider"></li><li><a href="/Newrs/default/user/login?_next=/Newrs/default/index" rel="nofollow">Log In</a></li></ul></li>
+{{else:}}
+    <li class="right"><a class="hsubs" href="#">Welcome</a><ul class="subs"><li><a href="/Newrs/default/user/logout" rel="nofollow">Log Out</a></li><li><a href="/Newrs/default/user/request_reset_password?_next=/Newrs/default/index" rel="nofollow">Lost password?</a></li><li><a href="/Newrs/default/user/login?_next=/Newrs/default/my_profile" rel="nofollow">Show Profile</a></li></ul></li>
+{{pass}}</ul>
+        </div><!--close menu-->
+    <div class="container-fluid main-container">
+
+     <div class="container-fluid main-container">
+        {{include}}
+
+    </div>
+
+    </div>
+	<div id="menubar">
+	<div id="main">
+	  <div id="content_blue">
+	    <div class="content_blue_container_box">
+		  <h4>Latest News</h4>
+	      <p style="text-align:center">Latest news posts about IIIT-H Library</p>
+		  <div class="readmore">
+		    <a href="extra.html#section1">Read more</a>
+		  </div><!--close readmore-->
+	    </div><!--close content_blue_container_box-->
+        <div class="content_blue_container_box">
+         <h4>Vision, Mission, Value</h4>
+	      <p style="text-align:center">Aims, missions and visions of IIIT-H Library</p>
+	      <div class="readmore">
+		    <a href="extra.html#section2">Read more</a>
+		  </div><!--close readmore-->
+	    </div><!--close content_blue_container_box-->
+        <div class="content_blue_container_boxl">
+		  <h4>Foundation</h4>
+	      <p style="text-align:center"> Learn more about IIIT-H Library</p>
+	      <div class="readmore">
+		    <a href="extra.html#section3">Read more</a>
+		  </div><!--close readmore-->	  
+	    </div><!--close content_blue_container_box1-->      
+	    <br style="clear:both"/>
+      </div><!--close content_blue--> 	
+	</div><!--close site_content--> 
+	
+	</div>
+        
+	  </div>
+    </div><!--close menubar-->
+  <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
+    <script src="{{=URL('static','js/web2py-bootstrap.js')}}"></script>
+    {{block page_js}}{{end page_js}}
+    {{if response.google_analytics_id:}}
+    <!-- Analytics ==================================== -->
+    <script src="{{=URL('static','js/analytics.min.js')}}"></script>
+    <script type="text/javascript">
+      analytics.initialize({
+      'Google Analytics':{trackingId:'{{=response.google_analytics_id}}'}
+      });
+    </script>
+    {{pass}}
+    <!-- Share ============================y============ -->
+    <script src="{{=URL('static','js/share.js',vars=dict(static=URL('static','images')))}}"></script>
+</body>
+</html>

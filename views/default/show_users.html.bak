@@ -1,0 +1,31 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h5>
+    &nbsp;
+</h5>
+<hr>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Users</h1>
+<div class="hehe">
+<table style="font-size:20px" class="table">
+    <tr class="first">
+            <td>Name</td>
+            <td>Roll No.</td>
+            <td>E-Mail</td>
+    </tr>
+    {{for book in a:}}
+        <tr class="sec">
+            <td>{{=book.first_name}} {{=book.last_name}}</a></td>
+            <td>{{=book.roll_no}}</a></td>
+            <td>{{=book.email}}</td>
+        </tr>
+    {{pass}}
+</table>
+</div>

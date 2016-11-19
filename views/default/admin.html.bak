@@ -1,0 +1,30 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Admin Access</h1>
+<div class="out">
+    <ul class="in">
+        <li class="list"><a href="{{=URL('default','updatebooks')}}">Update Books</a></li>
+        <li class="list"><a href="{{=URL('default','updatejournals')}}">Update Journals</a></li>
+        <li class="list"><a href="{{=URL('default','updateejournals')}}">Update E-Journals</a></li>
+        <li class="list"><a href="{{=URL('default','updatethesis')}}">Update Thesis</a></li>
+        <li class="list"><a href="{{=URL('default','issue_book')}}">Issue Book</a></li>
+        <li class="list"><a href="{{=URL('default','return_book')}}">Return Book</a></li>
+        <li class="list"><a href="{{=URL('default','purchase_book')}}">Purchase Book</a></li>
+        <li class="list"><a href="{{=URL('default','uploadebooks')}}">Upload E-Books</a></li>
+        <li class="list"><a href="{{=URL('default','lost_book')}}">Lost book</a></li>
+        <li class="list"><a href="{{=URL('default','answerqueries')}}">Answer Queries</a></li>
+        <li class="list"><a href="{{=URL('default','newnews')}}">Upload News</a></li>
+        <li class="list"><a href="{{=URL('default','editnews')}}">Edit News</a></li>
+        <li class="list"><a href="{{=URL('default','deletenews')}}">Delete News</a></li>
+        <li class="list"><a href="{{=URL('default','view_recommendation')}}">View Recommendation</a></li>
+        <li class="list"><a href="{{=URL('default','overdue')}}">Overdue</a></li>
+        <li class="list"><a href="{{=URL('default','addcontacts')}}">Add Contacts</a></li>
+        <li class="list"><a href="{{=URL('default','managecontacts')}}">Manage Contacts</a></li>
+        <li class="list"><a href="{{=URL('default','managecontacts')}}">View Feedbacks</a></li>
+    </ul>
+</div>

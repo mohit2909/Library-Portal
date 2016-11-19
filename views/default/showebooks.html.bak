@@ -1,0 +1,31 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h5>
+    &nbsp;
+</h5>
+<hr>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">E-Books</h1>
+<div class="hehe">
+<table style="font-size:20px" class="table">
+    <tr class="first">
+            <td>E-Book Title</td>
+            <td>Description</td>
+            <td>Download Link</td>
+    </tr>
+    {{for book in ebooks:}}
+        <tr class="sec">
+            <td>{{=book.Title}}</a></td>
+            <td>{{=book.Descrip}}</a></td>
+            <td><a href="{{=URL('download', args=book.ebook)}}">Download</a></td>
+        </tr>
+    {{pass}}
+</table>
+</div>

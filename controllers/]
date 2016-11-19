@@ -1,0 +1,312 @@
+# -*- coding: utf-8 -*-
+# this file is released under public domain and you can use without limitations
+
+#########################################################################
+## This is a samples controller
+## - index is the default action of any application
+## - user is required for authentication and authorization
+## - download is for downloading files uploaded in the db (does streaming)
+## - call exposes all registered services (none by default)
+#########################################################################
+import datetime
+
+
+def index():
+    """
+    example action using the internationalization operator T and flash
+    rendered by views/default/index.html or views/generic.html
+
+    if you need a simple wiki simple replace the two lines below with:
+    return auth.wiki()
+    """
+    response.flash = T("Hi, Have a Nice Day")
+    return locals()
+
+
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    """
+    return dict(form=auth())
+
+
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+
+
+def call():
+    """
+    exposes services. for example:
+    http://..../[app]/default/call/jsonrpc
+    decorate with @services.jsonrpc the functions to expose
+    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
+    """
+    return service()
+
+
+@auth.requires_signature()
+def data():
+    """
+    http://..../[app]/default/data/tables
+    http://..../[app]/default/data/create/[table]
+    http://..../[app]/default/data/read/[table]/[id]
+    http://..../[app]/default/data/update/[table]/[id]
+    http://..../[app]/default/data/delete/[table]/[id]
+    http://..../[app]/default/data/select/[table]
+    http://..../[app]/default/data/search/[table]
+    but URLs must be signed, i.e. linked with
+      A('table',_href=URL('data/tables',user_signature=True))
+    or with the signed load operator
+      LOAD('default','data.load',args='tables',ajax=True,user_signature=True)
+    """
+    return dict(form=crud())
+
+
+    
+def redirect_after_login(form):
+	redirect(URL(r=request,f='index.html',args=[0]))
+def redirect_after_register(form):
+ if(auth.email):
+  redirect(URL(r=request,f='index.html',args=[0]))
+
+auth.settings.login_onaccept.append(redirect_after_login)
+auth.settings.register_onaccept.append(redirect_after_register)
+#auth.settings.table_user.password.requires = IS_STRONG(min=8,special=1,upper=1,lower=1)
+@auth.requires_login()
+def home():
+
+    a = db(db.auth_user.id ==  auth.user_id).select(db.auth_user.ALL)
+    return locals()
+
+@auth.requires_login()
+def homepage():
+
+    id2 = request.args(0)
+    a = db(db.auth_user.id ==  id2).select(db.auth_user.ALL)
+    id1 = auth.user_id
+    return locals()
+
+@auth.requires_login()
+def view_people():
+
+    id1 = auth.user_id
+    a = db(db.auth_user.id != auth.user_id).select(db.auth_user.ALL)
+    return locals()
+
+    
+#-----------------------------------------posts------------------------------------------------------#
+import re
+import os
+@auth.requires_login()
+def updatebooks():
+   form=SQLFORM(db.books).process()
+   if form.process().accepted :
+      redirect(URL('index.html'))
+   else:
+      response.flash=('Fill the form correctly')
+   return locals()
+
+@auth.requires_login()
+def updatejournals():
+   form=SQLFORM(db.journals).process()
+   if form.process().accepted :
+      redirect(URL('home.html'))
+   else:
+      response.flash=('Fill it correctly')
+   return locals()
+
+@auth.requires_login()
+def updatethesis():
+   form=SQLFORM(db.thesis).process()
+   if form.process().accepted :
+      redirect(URL('home.html'))
+   else:
+      response.flash=('Fill the form correctly')
+   return locals()
+
+@auth.requires_login()
+def updateejournals():
+   form=SQLFORM(db.e_journals).process()
+   if form.process().accepted :
+      redirect(URL('index.html'))
+   else:
+     response.flash=("Fill it correctly")
+   return locals()
+
+def showejournals():
+   ejournals=db(db.e_journals).select(orderby=db.e_journals.title)
+   return locals()
+
+def showjournals():
+   journals=db(db.journals).select(orderby=db.journals.title)
+   return locals()
+
+@auth.requires_login()
+def issue_book():
+   time=datetime.date.today()
+   b=time+datetime.timedelta(days=15)
+   form=SQLFORM(db.issue_books).process()
+   db.issue_books.return_date.default=b
+   if form.accepted :
+      redirect(URL('home.html'))
+   else:
+      response.flash=('Fill it correctly')
+   return locals()
+
+@auth.requires_login()  
+def fine_calculator():
+   return_date=request.args(0) or 0
+   if return_date==0:
+      session.flash="Cannot Access"
+      redirect(URL('index.html'))
+   time=datetime.date.today()
+   if return_date-time<0:
+      fine=5*abs(return_date-time)
+   else:
+      fine=0
+   return locals()
+
+@auth.requires_login()   
+def return_book():
+   time=datetime.date.today()
+   form= SQLFORM.factory(Field('ref_no'))
+   if form.process().accepted:
+      d=db(db.issue_books.ref_no==form.ref_no).select()
+      if d:
+	       db(db.issue_books.id==d.id).delete()
+	       redirect(URL('fine_calculator.html',args=(d.return_date)))
+      else:
+	       response.flash=("No Book with given ref_no. is issued")
+   return locals()
+def purchase_book():
+  form=SQLFORM.factory(Field('ref_no','string',required=True)).process()
+  if form.process().accepted:
+    if db(db.books.ref_no==form.ref_no).select() and not db(db.issue_books.ref_no==form.ref_no).select(db.books):
+      db(db.books.ref_no==form.ref_no).delete()
+      redirect(URL('index.html'))
+    else:
+      response.flash="This book is not present"     
+  return locals()
+
+@auth.requires_login()   
+def askyourqueries():
+   form=SQLFORM(db.ask).process()
+   if form.process().accepted:
+      redirect(URL('ask.html'))
+   else:
+      response.flash=("Fill Your Queries Correctly")
+   return locals()
+
+@auth.requires_login()
+def uploadebooks():
+   form=SQLFORM(db.e_book).process()
+   if form.process().accepted:
+     session.flash="Your E-BOOK is under authetication"
+     redirect(URL("index.html"))
+   else :
+      response.flash=("Upload the Book Properly")
+   return locals()
+
+@auth.requires_login()  
+def view_recommendation():
+  s=db(db.recommend).select(db.recomend)
+  return locals()
+
+@auth.requires_login() 
+def recommend():
+  form=SQLFORM(db.recommend).process() 
+  if(form.process().accepted):
+    session.flash("Your Recommendation is under Consideration")
+    redirect(URL('index.html'))
+  else:
+    response.flash=('Please Recommend the book properly')  
+  
+  return locals()
+
+@auth.requires_login()  
+def lost_book():
+  form=SQLFORM(db.lost_book).process()
+  if form.process().accepted:
+    new=db(db.books.ref_no==form.book_ref).select(db.books.ALL)
+    fine=new[0].cost
+    db(db.books.ref_no==form.book_ref).delete()
+    session.flash=("Doit")
+    redirect(URL('index.html'))
+   # else:
+    #  response.flash="Fuck off"
+  else:
+    session.flash="Fill it Carefully"
+  return locals()
+
+@auth.requires_login()  
+def answerqueries():
+  form=SQLFORM(db.answer_query).process()
+  new=request.args(0)
+  if new >0:
+    form.postid.default=int(new)
+    if form.process().accepted:
+      redirect(URL('index.html'))
+    else:
+     response.flash=("fill it correctly")
+  return locals()
+
+@auth.requires_login()
+def newnews():
+  form=SQLFORM(db.news).process()
+  if (form.process().accepted):
+    redirect(URL('index.html'))
+  else:
+    response.flash=('Fill the new Properly')
+  return locals()
+
+@auth.requires_login()
+def editnews():
+  news=request.args(0)
+  if news:
+    new=db(db.news.id==news).select(db.news)[0]
+    post=SQLFORM(db.recepie,news,deletable=True,fields=['Title','cont'])
+    if post.process().accepted:
+      new.cont=post.vars.cont
+      new.Title=post.vars.Title
+      new.update_record()
+      session.flash="successfully updated"
+    elif post.errors:
+      response.flash='Errors in form'
+  return locals()
+
+@auth.requires_login()  
+def deletenews():
+  pid=request.args
+  if pid:
+    db(db.news.id==pid[0]).delete()
+    session.flash='Delete !'
+  else:
+    session.flash="Fuck off"
+  redirect(URL('index.html'))
+  return locals()
+
+
+@auth.requires_login()
+def overdue():
+  now=datetime.date.today
+  datab=db(db.issue_books.return_date < now).select(db.issue_books)
+  return locals()
+
+def shownews():
+  row=db(db.news.id > 0).select(db.news)
+  return locals()
+  

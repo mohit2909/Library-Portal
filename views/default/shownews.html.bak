@@ -1,0 +1,30 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Show News</h1>
+<div class="hehe">
+<table style="font-size:20px" class="table">
+    <tr class="first">
+            <td>News Image</td>
+            <td>News Title</td>
+            <td>Uploaded On</td>
+            <td>Description</td>
+    </tr>
+    {{for book in row:}}
+        <tr class="sec">
+            <td>
+                <span class="tinyimg">
+                    <img width="100px" src="http://127.0.0.1:8000/Newrs/appadmin/download/db/{{=book.news_image}}"/>
+                </span>
+            </td>
+            <td>{{=book.Title}}</td>
+            <td>{{=book.created_on.date()}}</td>
+            <td>{{=book.cont}}</td>
+        </tr>
+    {{pass}}
+</table>
+</div>

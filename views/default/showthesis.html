@@ -1,0 +1,25 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Books</h1>
+<div class="hehe">
+<table style="font-size:20px" class="table">
+    <tr class="first">
+            <td>Thesis Name</td>
+            <td>Department</td>
+            <td>Created By</td>
+            <td>Created On</td>
+    </tr>
+    {{for book in thesis:}}
+            <td>{{=book.title}}</a></td>
+            <td>{{=book.depart}}</a></td>
+            <td>{{=book.created_by.first_name}}</td>
+            <td>{{=book.created_on}}</td>
+        </tr>
+    {{pass}}
+</table>
+</div>

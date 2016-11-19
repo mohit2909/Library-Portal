@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <title>IIIT-H Library</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="{{=URL('static','css/style2.css')}}" />
+  <script type="text/javascript" src="{{=URL('static','js/jquery.min.js')}}"></script>
+  <script type="text/javascript" src="{{=URL('static','js/jquery.easing.min.js')}}"></script>
+  <script type="text/javascript" src="{{=URL('static','js/jquery.nivo.slider.pack.js')}}"></script>
+  <script type="text/javascript" src="{{=URL('static','js/jquery-scroller-v1.min.js')}}"></script>  
+  <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+  </script>
+</head>
+
+<body>
+	<div id="menubar">
+	<div id="main">
+	<a href="http://iiit.ac.in" id="logo"><img style="height=:100px;width:220px" src="{{=URL('static','images/logo.png')}}"></a>
+    <hr>
+	<h3>&nbsp;</h3>
+	  <div id="welcome">
+	    <h1><a href="#">IIIT-H Library</a></h1>
+	  </div><!--close welcome-->
+      <div id="menu_items">
+          <ul id="nav"><li><a href="/Newrs/default/index">Home</a></li><li><a class="hsubs" href="#">Resourses</a><ul class="subs"><li><a href="/Newrs/default/showbooks">Books</a></li><li><a href="/Newrs/default/showjournals">Journals</a></li><li><a href="/Newrs/default/showthesis">Thesis</a></li><li><a href="/Newrs/default/showejournals">E-Journals</a></li><li><a href="/Newrs/default/showebooks">E-Books</a></li></ul></li><li><a class="hsubs" href="#">Other</a><ul class="subs"><li><a href="/Newrs/default/announcements">Announcements</a></li><li><a href="/Newrs/default/reqform">Requisition Form</a></li><li><a href="/Newrs/default/showthesis">Recent Additions</a></li><li><a href="/Newrs/default/recommend">Recommend Book</a></li></ul></li><li><a class="hsubs" href="#">About</a><ul class="subs"><li><a href="/Newrs/default/rules">Rules</a></li><li><a href="/Newrs/default/hours">Working Hours</a></li><li><a href="/Newrs/default/faq">FAQ</a></li><li><a href="/Newrs/default/contact">Contact</a></li><li><a href="/Newrs/default/feedback">Feedback</a></li></ul></li>
+              {{if (not auth.is_logged_in()):}}
+              <li class="right"><a class="hsubs" href="#">Library</a><ul class="subs"><li><a href="/Newrs/default/user/register?_next=/Newrs/default/index" rel="nofollow"><i class="icon icon-user glyphicon glyphicon-user"></i> Sign Up</a></li><li class="divider"></li><li><a href="/Newrs/default/user/login?_next=/Newrs/default/index" rel="nofollow"><i class="icon icon-off glyphicon glyphicon-off"></i> Log In</a></li></ul></li>
+          {{else:}}
+          <li class="right"><a class="hsubs" href="#">Welcome</a><ul class="subs"><li><a href="/Newrs/default/user/logout" rel="nofollow"><i class="icon icon-user glyphicon glyphicon-user"></i> Log Out</a></li><li><a href="/Newrs/default/user/request_reset_password?_next=/Newrs/default/index" rel="nofollow"><i class="icon icon-lock glyphicon glyphicon-lock"></i> Lost password?</a></li></ul></li>
+        {{pass}}
+          </ul>
+        </div><!--close menu-->
+    <div class="container-fluid main-container">
+
+     <div class="container-fluid main-container">
+        {{include}}
+
+    </div>
+
+    </div>
+	<div id="menubar">
+	<div id="main">
+	  <div id="content_blue">
+	    <div class="content_blue_container_box">
+		  <h4>Latest Blog Post</h4>
+	      <p> eg: Today Dr.X will not be available on Y timing, etc.</p>
+		  <div class="readmore">
+		    <a href="extra.html#section1">Read more</a>
+		  </div><!--close readmore-->
+	    </div><!--close content_blue_container_box-->
+        <div class="content_blue_container_box">
+         <h4>Vision, Mission, Value</h4>
+	      <p>"Health and Care Redefined", that is what Aarogya aims for.</p>
+	      <div class="readmore">
+		    <a href="extra.html#section2">Read more</a>
+		  </div><!--close readmore-->
+	    </div><!--close content_blue_container_box-->
+        <div class="content_blue_container_boxl">
+		  <h4>Foundation</h4>
+	      <p> Learn more about Aarogya, the medical center of IIIT, Hyderabad.</p>
+	      <div class="readmore">
+		    <a href="extra.html#section3">Read more</a>
+		  </div><!--close readmore-->	  
+	    </div><!--close content_blue_container_box1-->      
+	    <br style="clear:both"/>
+      </div><!--close content_blue--> 	
+	</div><!--close site_content--> 
+	
+	</div>
+        
+	  </div>
+    </div><!--close menubar-->>
+  
+</body>
+</html>

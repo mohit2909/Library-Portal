@@ -1,0 +1,28 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Feedbacks</h1>
+<div class="hehe">
+<table style="font-size:20px" class="table">
+    <tr class="first">
+            <td>Subject</td>
+            <td>Created By</td>
+            <td>Created On</td>
+        	<td>Description</td>
+            <td></td>
+    </tr>
+    {{for book in new:}}
+        <tr class="sec">
+            <td>{{=book.Subject}}</td>
+            <td>{{=book.created_by}}</td>
+            <td>{{=book.created_on.date()}}</td>
+            <td class="wrap">{{=book.Description}}</td>
+            <td><a href="{{=URL('deletefeedback',args=book.id)}}"> Delete </a> </td>
+        </tr>
+    {{pass}}
+</table>
+</div>

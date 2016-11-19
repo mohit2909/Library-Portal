@@ -1,0 +1,36 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Read More</h1>
+
+<div id="section1" class="container-fluid">
+<h3 style="color:white;">Latest News</h3>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+</div>
+<div id="section2" class="container-fluid">
+<h3 style="color:white;">Vision, Mission & Value</h3>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+<p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+</div>
+<div id="section3" class="container-fluid">
+<h3 style="color:white;">Foundation</h3>
+<p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+<p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+    <p>Lorem ipsum dolor sit amet, falli putent mea an. Dicta omnesque mei ei. Sit accusam aliquando ad. Dicunt hendrerit expetendis in sed. Et cum possit democritum. Eu vix assum convenire, aeque atomorum efficiantur an qui. Semper expetenda eloquentiam eos an, no eum novum propriae pertinax.</p>
+</div>

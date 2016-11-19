@@ -1,0 +1,32 @@
+{{extend 'layout.html'}}
+<h1>
+    &nbsp;
+</h1>
+<h1>
+    &nbsp;
+</h1>
+<h1 style="font-size:30px;text-align:center;text-shadow: 1px 1px 1px #000000;">Journals</h1>
+<div class="center">
+<a href="{{=URL('default','searchjournals')}}">
+<button class="button" src="{{=URL('default','searchbooks')}}">
+    Search Books
+</button>
+</a>
+</div>
+<div class="hehe">
+<table style="font-size:20px" class="table">
+    <tr class="first">
+            <td>Journal Name</td>
+            <td>Journal Type</td>
+            <td>Created By</td>
+            <td>Created On</td>
+    </tr>
+    {{for book in journals:}}
+            <td>{{=book.title}}</a></td>
+            <td>{{=book.classi}}</a></td>
+            <td>{{=book.created_by.first_name}}</td>
+            <td>{{=book.created_on}}</td>
+        </tr>
+    {{pass}}
+</table>
+</div>
